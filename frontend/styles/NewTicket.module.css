@@ -1,0 +1,48 @@
+.newTicket {
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newTicketBox {
+    width: 750px;
+    height: 550px;
+    background-color: #efefef;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: grey;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 7px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.productBrand,
+.productType {
+    margin: 16px;
+    padding: 6px 10px;
+}
+
+.container {
+  padding: 16px;
+}

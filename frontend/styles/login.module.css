@@ -1,0 +1,65 @@
+.login {
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBox {
+    width: 500px;
+    height: 500px;
+    background-color: #efefef;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: grey;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 7px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  .psw {
+     display: block;
+     float: none;
+  }
+}
