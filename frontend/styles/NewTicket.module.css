@@ -37,10 +37,20 @@
   opacity: 0.8;
 }
 
+.productDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
 .productBrand,
 .productType {
-    margin: 16px;
-    padding: 6px 10px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .container {

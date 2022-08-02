@@ -21,9 +21,8 @@ const NewTicket = () => {
                             </select>
                             <select name="type" id="type" className={styles.productType} required>
                                 <option value="">Select the product type</option>
-                                <option value="computer">Computer</option>
+                                <option value="hardware">Hardware</option>
                                 <option value="software">Software</option>
-                                <option value="server">Server</option>
                             </select>
                         </div>
 
