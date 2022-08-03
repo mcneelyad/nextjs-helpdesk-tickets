@@ -1,12 +1,18 @@
 const router = require('express').Router();
 
-router.get('/ticket/:id', (req,res) => {
+router.post('/new', async (req,res) => {
+    let reqBody = req.body;
+
+    console.log(reqBody)
+})
+
+router.get('/:id', (req,res) => {
     let { id } = req.params;
 
     res.send(`ticket with id: ${id}`);
 });
 
-router.get('/ticket/:id/edit', (req,res) => {
+router.get('/:id/edit', (req,res) => {
     let { id } = req.params;
 
     res.send(`Edit ticket with id: ${id}`)
