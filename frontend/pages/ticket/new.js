@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import axios from 'axios';
+import { useState } from 'react';
 
 import styles from '../../styles/NewTicket.module.css';
 
@@ -13,13 +13,6 @@ const NewTicket = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log('form submitted');
-        console.log(title);
-        console.log(description);
-        console.log(brand);
-        console.log(type);
-        console.log(contact);
-
         const ticket = {
             title: title,
             description: description,
@@ -29,7 +22,7 @@ const NewTicket = () => {
         }
 
         let req = await axios.post("http://localhost:5000/ticket/new", { ticket });
-        
+
     }
 
     return (
@@ -39,7 +32,7 @@ const NewTicket = () => {
 
                 <form method="post" onSubmit={handleSubmit}>
                     <div className={styles.container}>
-                        <input type="text" placeholder="Enter title" className={styles.input} name="title" required onChange={e => setTitle(e.target.value)}/>
+                        <input type="text" placeholder="Enter title" className={styles.input} name="title" required onChange={e => setTitle(e.target.value)} />
                         <textarea rows="7" cols="" placeholder="Enter the description" className={styles.input} name="description" required onChange={e => setDescription(e.target.value)}></textarea>
 
                         <div className={styles.productDetails}>
@@ -57,7 +50,7 @@ const NewTicket = () => {
                             </select>
                         </div>
 
-                        <input type="text" id="contact" name="contact" placeholder="Enter your contact information" className={styles.input} required onChange={e => setContact(e.target.value)}/>
+                        <input type="text" id="contact" name="contact" placeholder="Enter your contact information" className={styles.input} required onChange={e => setContact(e.target.value)} />
 
                         <button type="submit" className={styles.btn}>Submit</button>
                     </div>

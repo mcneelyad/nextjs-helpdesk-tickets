@@ -4,16 +4,17 @@ const pool = mysql.createPool({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USERNAME,
     password: process.env.MYSQL_PASSWORD,
-    port: process.env.MYSQL_PORT, 
+    port: process.env.MYSQL_PORT,
+    database: process.env.MYSQL_DB,
     connectTimeout: 10000
 })
 
-pool.getConnection(function(err) {
+pool.getConnection(function (err) {
     if (err) throw err;
     console.log("Connected to database");
 });
 
-pool.on('error', function(err) {
+pool.on('error', function (err) {
     console.log(err.code);
 });
 
