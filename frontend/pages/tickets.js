@@ -1,9 +1,14 @@
 import Ticket from '../components/Ticket';
 
+import styles from '../styles/TicketList.module.css';
+
 const Tickets = ({ tickets }) => {
   return (
-    <div>
-      {tickets && tickets.map(ticket => <Ticket ticket={ticket} />)}
+    <div className={styles.ticketListPage}>
+      <h1>Tickets</h1>
+      <div className="ticket-list">
+        {tickets && tickets.map(ticket => <Ticket ticket={ticket} />)}
+      </div>
     </div>
   )
 };

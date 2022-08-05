@@ -23,6 +23,7 @@ app.get('/tickets', (req, res) => {
     database.query("SELECT * from tickets", (error, results, fields) => {
         if (error) throw error;
         ticketList = results;
+        console.log(ticketList)
         res.send(ticketList);
     });
 });

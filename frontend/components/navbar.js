@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import styles from '../styles/navbar.module.css'
+import styles from '../styles/navbar.module.css';
 
 const Navbar = () => {
     const routes = [
@@ -22,12 +22,7 @@ const Navbar = () => {
                     <Link href='/'>
                         <a>logo</a>
                     </Link>
-                    </div>
-            </div>
-            <div className={styles.navbarMiddle}>
-                <Link href='/tickets'>
-                    <a>See all Tickets</a>
-                </Link>
+                </div>
             </div>
             <div className="navbar-right">
                 <div className={styles.navbarItems}>
@@ -41,18 +36,6 @@ const Navbar = () => {
                         )
                     })}
                 </div>
-                {/* <div className={styles.navbarItems}>
-                        <div className={styles.navbarItem}>
-                            <Link href='/tickets'>
-                                <a>Submit a Ticket</a>
-                            </Link>
-                        </div>
-                        <div className={styles.navbarItem}>
-                            <Link href='/login'>
-                                <a>Signup / Login</a>
-                            </Link>
-                        </div>
-                    </div> */}
             </div>
         </div>
     )

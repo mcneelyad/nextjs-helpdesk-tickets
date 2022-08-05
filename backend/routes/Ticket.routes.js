@@ -15,7 +15,10 @@ router.post('/new', async (req, res) => {
 router.get('/:id', (req, res) => {
     let { id } = req.params;
 
-    res.send(`ticket with id: ${id}`);
+    database.query("SELECT * from tickets WHERE id = ?", [id], (error, results, fields) => {
+        if (error) throw error;
+        res.send(results);
+    });
 });
 
 router.get('/:id/edit', (req, res) => {
