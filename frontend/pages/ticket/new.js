@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 
+import Router, { useRouter } from 'next/router';
+
 import styles from '../../styles/NewTicket.module.css';
 
 const NewTicket = () => {
@@ -9,6 +11,8 @@ const NewTicket = () => {
     const [brand, setBrand] = useState('');
     const [type, setType] = useState('');
     const [contact, setContact] = useState('');
+
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,7 +25,10 @@ const NewTicket = () => {
             contact: contact,
         }
 
-        let req = await axios.post("http://localhost:5000/ticket/new", { ticket });
+        let req = await axios.post("http://localhost:5000/ticket/new", { ticket })
+            .then(res => {
+                router.push(`/ticket/${res.data.insertId}`);
+            })
 
     }
 

@@ -6,9 +6,12 @@ router.post('/new', async (req, res) => {
 
     let { title, description, brand, type, contact } = reqBody.ticket;
 
-    database.query("INSERT INTO tickets (title, description) VALUES (?,?);", [title, description], (error, results, fields) => {
+    let insertId;
+
+    database.query("INSERT INTO tickets (title, description, created_by) VALUES (?,?,?);", [title, description, contact], (error, results, fields) => {
         if (error) throw error;
-        console.log(results);
+        insertId = results.insertId;
+        res.send({ "insertId": insertId })
     });
 });
 

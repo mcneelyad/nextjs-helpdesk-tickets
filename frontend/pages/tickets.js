@@ -1,4 +1,5 @@
 import Ticket from '../components/Ticket';
+;
 
 import styles from '../styles/TicketList.module.css';
 
