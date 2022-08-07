@@ -7,7 +7,7 @@ const Tickets = ({ tickets }) => {
   return (
     <div className={styles.ticketListPage}>
       <h1>Tickets</h1>
-      <div className="ticket-list">
+      <div className={styles.ticketList}>
         {tickets && tickets.map(ticket => <Ticket ticket={ticket} />)}
       </div>
     </div>

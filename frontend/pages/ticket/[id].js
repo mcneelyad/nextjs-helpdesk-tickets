@@ -1,8 +1,21 @@
 import { useRouter } from 'next/router';
 
+import styles from '../../styles/TicketById.module.css';
+
 const TicketById = ({ ticket }) => {
 
-    return <div>{ticket.title}</div>
+    return (
+        <div className={styles.ticketDetailsPage}>
+            <div className={styles.topLevelDetails}>
+                <h2>{ticket.title}</h2>
+            </div>
+            <div className={styles.ticketDetails}>
+                <p>{ticket.description}</p>
+                <p>{ticket.date_created}</p>
+            </div>
+
+        </div>
+    )
 }
 
 export default TicketById;
