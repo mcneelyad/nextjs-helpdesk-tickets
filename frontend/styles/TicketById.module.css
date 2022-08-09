@@ -1,4 +1,52 @@
 .ticketDetailsPage {
-    padding: 75px 350px;
-    border: 1px solid red;
+    padding: 75px 200px;
+    height: 100vh;
+}
+
+.ticketDetailsPage:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.leftSide {
+    float: left;
+    width: 65%;
+    height: 100%;
+    margin: 0 10px 0 10px;
+}
+
+.rightSide { 
+    float: left;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+}
+
+.topLevelDetails {
+    display: flex;
+    line-height: 0;
+    justify-content: space-between;
+}
+
+.ticketDetails {
+    margin-top: 20px;
+    height: 90%;
+}
+
+.ticketDetails textarea {
+    width: 100%;
+    height: 20%;
+}
+
+.customerDetails {
+    height: 33%;
+}
+
+.technicianDetails {
+    height: 33%;
+}
+
+.resolution {
+    height: 33%;
 }
