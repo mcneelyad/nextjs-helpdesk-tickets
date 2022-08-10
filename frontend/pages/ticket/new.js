@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import Router, { useRouter } from 'next/router';
 
-import styles from '../../styles/NewTicket.module.css';
+import styles from '../../styles/tickets/NewTicket.module.css';
 
 const NewTicket = () => {
     const [title, setTitle] = useState('');

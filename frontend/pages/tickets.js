@@ -1,6 +1,6 @@
 import Ticket from '../components/Ticket';
 
-import styles from '../styles/TicketList.module.css';
+import styles from '../styles/tickets/TicketList.module.css';
 
 const Tickets = ({ tickets }) => {
   return (

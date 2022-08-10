@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import styles from '../../styles/TicketById.module.css';
+import styles from '../../styles/tickets/TicketById.module.css';
 
 const TicketById = ({ ticket }) => {
 

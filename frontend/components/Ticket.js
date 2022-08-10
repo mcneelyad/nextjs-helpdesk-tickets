@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../styles/TicketList.module.css';
+import styles from '../styles/tickets/TicketList.module.css';
 
 const Ticket = ({ ticket }) => {
     const formatDateString = (dateString) => {
