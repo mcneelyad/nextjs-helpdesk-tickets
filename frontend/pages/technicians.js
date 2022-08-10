@@ -3,35 +3,35 @@ import NewTechnicianModal from "../components/NewTechModal";
 
 import styles from '../styles/technicians/technicians.module.css';
 
-const TechniciansList = () => {
+const TechniciansList = ({ technicians }) => {
     const [showTechModal, setShowTechModal] = useState(false);
 
     const showModal = () => setShowTechModal(true);
     const hideModal = () => setShowTechModal(false);
 
-    const technicians = [
-        {
-            "id": 1,
-            "firstName": "John",
-            "lastName": "Smith",
-            "email": "john@test.com",
-            "phone": "704-123-4567"
-        },
-        {
-            "id": 2,
-            "firstName": "John",
-            "lastName": "Smith",
-            "email": "john@test.com",
-            "phone": "704-123-4567"
-        },
-        {
-            "id": 3,
-            "firstName": "John",
-            "lastName": "Smith",
-            "email": "john@test.com",
-            "phone": "704-123-4567"
-        }
-    ]
+    // const technicians = [
+    //     {
+    //         "id": 1,
+    //         "firstName": "John",
+    //         "lastName": "Smith",
+    //         "email": "john@test.com",
+    //         "phone": "704-123-4567"
+    //     },
+    //     {
+    //         "id": 2,
+    //         "firstName": "John",
+    //         "lastName": "Smith",
+    //         "email": "john@test.com",
+    //         "phone": "704-123-4567"
+    //     },
+    //     {
+    //         "id": 3,
+    //         "firstName": "John",
+    //         "lastName": "Smith",
+    //         "email": "john@test.com",
+    //         "phone": "704-123-4567"
+    //     }
+    // ]
 
     return (
         <div className={styles.techniciansListPage}>
@@ -62,7 +62,7 @@ const TechniciansList = () => {
                                     <td>{tech.phone}</td>
                                 </tr>
                             }) :
-                            <tr className={styles.tr} colspan="5">
+                            <tr className={styles.tr} colSpan="4">
                                 No technicians found
                             </tr>
                         }
@@ -72,5 +72,14 @@ const TechniciansList = () => {
         </div>
     )
 };
+
+export async function getStaticProps(context) {
+    const res = await fetch('http://localhost:5000/technicians')
+    const technicians = await res.json();
+
+    return {
+        props: { technicians: technicians },
+    }
+}
 
 export default TechniciansList;

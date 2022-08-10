@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import styles from '../styles/technicians/NewTechnicianModal.module.css';
 
@@ -9,15 +10,25 @@ const NewTechnicianModal = ({ handleClose, show, setShowTechModal }) => {
 
     const showHideClassName = show ? `${styles.modal} + " " + ${styles.display}` : `${styles.modal} + " " + ${styles.hide}`;
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
         console.log('form submit')
         console.log(firstName, lastName, email, phone);
+
+        await axios.post("http://localhost:5000/technicians/new", { firstName, lastName, email, phone })
+            .then((data) => console.log(data))
+            .catch(err => {
+                console.error(err);
+                alert(err.statusText);
+            })
+
         setFirstName('');
         setLastName('');
         setEmail('')
         setPhone('');
+
         setShowTechModal(false);
+        window.location.reload()
     }
 
     return (

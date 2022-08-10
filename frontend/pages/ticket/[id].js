@@ -67,8 +67,6 @@ export const getStaticProps = async ({ params }) => {
     const res = await fetch(`http://localhost:5000/ticket/${params.id}`);
     const ticket = await res.json();
 
-    console.log(ticket[0])
-
     return {
         props: { ticket: ticket[0] }
     }
