@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 const ticketRouter = require('./routes/Ticket.routes');
+const techncianRouter = require('./routes/Technician.routes');
 
 app.get('/', (req, res) => {
     res.send({ 'message': 'hello world' });
@@ -20,7 +21,8 @@ app.get('/', (req, res) => {
 app.get('/tickets', (req, res) => {
     let ticketList = []
 
-    database.query("SELECT * from tickets", (error, results, fields) => {
+    let sql = "SELECT * from tickets";
+    database.query(sql, (error, results, fields) => {
         if (error) throw error;
         ticketList = results;
         res.send(ticketList);
@@ -28,5 +30,6 @@ app.get('/tickets', (req, res) => {
 });
 
 app.use('/ticket', ticketRouter);
+app.use('/technicians', techncianRouter)
 
 app.listen(5000, () => console.log(`server running on port ${PORT}`))
