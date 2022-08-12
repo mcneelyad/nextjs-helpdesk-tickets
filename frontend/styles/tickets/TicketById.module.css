@@ -54,14 +54,6 @@
     border-radius: 15px;
 }
 
-/* .technicianDetails {
-    height: 33%;
-}
-
-.resolution {
-    height: 33%;
-} */
-
 .badge {
     background-color: #efefef;
     color: white;
@@ -80,4 +72,51 @@
     font-size: inherit;
     cursor: inherit;
     line-height: inherit;
+}
+
+@media screen and (max-width: 1275px) {
+    .ticketDetailsPage {
+        padding: 75px 100px;
+        height: 100vh;
+        display: grid;
+    }
+
+    .rightSide,
+    .leftSide {
+        width: 100%;
+    }
+
+    .customerDetails,
+    .technicianDetails,
+    .resolution {
+        margin: 20px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .topLevelDetails {
+        display: grid;
+    }
+
+    .topLevelDetails h2,
+    .topLevelDetails .statusPriority {
+        margin: 50px 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .ticketDetailsPage {
+        padding: 75px 0px;
+    }
+}
+
+@media screen and (min-width: 1275px) and (max-width: 1600px) {
+
+    .customerDetails,
+    .technicianDetails,
+    .resolution {
+        margin: 0 20px;
+        /* height: 150px; */
+    }
 }
