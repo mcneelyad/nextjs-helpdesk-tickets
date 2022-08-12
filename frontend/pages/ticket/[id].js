@@ -10,17 +10,21 @@ const TicketById = ({ ticket }) => {
                 <div className={styles.topLevelDetails}>
                     <h2>{ticket.title}</h2>
                     <div className="statusPriority">
-                        <select name="status" id="status">
-                            <option value="open">Open</option>
-                            <option value="in_progress">In progress</option>
-                            <option value="closed">Closed</option>
-                        </select>
-                        <select name="priority" id="priority">
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
-                            <option value="urgent">Urgent</option>
-                        </select>
+                        <span className={styles.badge}>
+                            <select name="status" id="status">
+                                <option value="open">Open</option>
+                                <option value="in_progress">In progress</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </span>
+                        <span className={styles.badge}>
+                            <select name="priority" id="priority">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                                <option value="urgent">Urgent</option>
+                            </select>
+                        </span>
                     </div>
                 </div>
                 <div className={styles.ticketDetails}>

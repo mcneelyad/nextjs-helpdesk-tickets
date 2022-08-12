@@ -32,18 +32,29 @@
     border-collapse: collapse;
 }
 
-.table>thead,
-.tr {
-    padding: 8px;
+.table, 
+.table th,
+.table td {
+    border: 1px solid black;
 }
 
-.tr {
+.table tr {
+    margin: 5px;
+}
+
+.table >tr {
     width: 100%;
     background-color: #e1e1e1;
     text-align: center;
     margin: 5px;
+    padding: 8px;
 }
 
-.table>thead {
-    width: 25%;
+.table tr:nth-child(even) { 
+    background-color: #f2f2f2;
+    margin: 5px;
 }
+
+/* .table>thead {
+    width: 25%;
+} */

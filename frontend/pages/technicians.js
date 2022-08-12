@@ -1,3 +1,4 @@
+import { Table } from "@nextui-org/react";
 import { useState } from 'react';
 import NewTechnicianModal from "../components/NewTechModal";
 
@@ -9,30 +10,6 @@ const TechniciansList = ({ technicians }) => {
     const showModal = () => setShowTechModal(true);
     const hideModal = () => setShowTechModal(false);
 
-    // const technicians = [
-    //     {
-    //         "id": 1,
-    //         "firstName": "John",
-    //         "lastName": "Smith",
-    //         "email": "john@test.com",
-    //         "phone": "704-123-4567"
-    //     },
-    //     {
-    //         "id": 2,
-    //         "firstName": "John",
-    //         "lastName": "Smith",
-    //         "email": "john@test.com",
-    //         "phone": "704-123-4567"
-    //     },
-    //     {
-    //         "id": 3,
-    //         "firstName": "John",
-    //         "lastName": "Smith",
-    //         "email": "john@test.com",
-    //         "phone": "704-123-4567"
-    //     }
-    // ]
-
     return (
         <div className={styles.techniciansListPage}>
             <p>Technicians</p>
@@ -41,33 +18,30 @@ const TechniciansList = ({ technicians }) => {
                 Add Technician
             </button>
             <div className="techniciansList">
-                <table className={styles.table}>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Phone #</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <Table css={{ height: "auto", minWidth: "100%" }}>
+                    <Table.Header>
+                        <Table.Column>ID</Table.Column>
+                        <Table.Column>First Name</Table.Column>
+                        <Table.Column>Last Name</Table.Column>
+                        <Table.Column>Email</Table.Column>
+                        <Table.Column>Phone Number</Table.Column>
+                    </Table.Header>
+                    <Table.Body>
                         {technicians.length ?
                             technicians.map(tech => {
-                                return <tr className={styles.tr} key={tech.id}>
-                                    <td>{tech.id}</td>
-                                    <td>{tech.firstName}</td>
-                                    <td>{tech.lastName}</td>
-                                    <td>{tech.email}</td>
-                                    <td>{tech.phone}</td>
-                                </tr>
+                                return (<Table.Row key={tech.id}>
+                                    <Table.Cell>{tech.id}</Table.Cell>
+                                    <Table.Cell>{tech.firstName}</Table.Cell>
+                                    <Table.Cell>{tech.lastName}</Table.Cell>
+                                    <Table.Cell>{tech.email}</Table.Cell>
+                                    <Table.Cell>{tech.phone}</Table.Cell>
+                                </Table.Row>)
                             }) :
-                            <tr className={styles.tr} colSpan="4">
-                                No technicians found
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+                            <Table.Row>
+                                <Table.Cell ></Table.Cell>
+                            </Table.Row>}
+                    </Table.Body>
+                </Table>
             </div>
         </div>
     )

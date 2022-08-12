@@ -12,11 +12,8 @@ const NewTechnicianModal = ({ handleClose, show, setShowTechModal }) => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        console.log('form submit')
-        console.log(firstName, lastName, email, phone);
 
         await axios.post("http://localhost:5000/technicians/new", { firstName, lastName, email, phone })
-            .then((data) => console.log(data))
             .catch(err => {
                 console.error(err);
                 alert(err.statusText);
