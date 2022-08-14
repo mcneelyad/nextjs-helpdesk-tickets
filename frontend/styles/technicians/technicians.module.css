@@ -55,6 +55,14 @@
     margin: 5px;
 }
 
-/* .table>thead {
-    width: 25%;
-} */
+.activeBadge {
+
+}
+
+.inactiveBadge {
+
+}
+
+.pausedBadge {
+    
+}

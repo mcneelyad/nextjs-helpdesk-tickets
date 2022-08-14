@@ -22,7 +22,7 @@ app.get('/tickets', (req, res) => {
     let ticketList = []
 
     let sql = "SELECT * from tickets";
-    database.query(sql, (error, results, fields) => {
+    database.execute(sql, (error, results, fields) => {
         if (error) throw error;
         ticketList = results;
         res.send(ticketList);

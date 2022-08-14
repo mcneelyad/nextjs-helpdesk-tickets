@@ -1,4 +1,5 @@
 import { Table } from "@nextui-org/react";
+import Link from 'next/link';
 import { useState } from 'react';
 import NewTechnicianModal from "../components/NewTechModal";
 
@@ -9,6 +10,17 @@ const TechniciansList = ({ technicians }) => {
 
     const showModal = () => setShowTechModal(true);
     const hideModal = () => setShowTechModal(false);
+
+    const getStatusCell = (status) => {
+        switch (status) {
+            case "active":
+                return <Table.Cell className={styles.activeBadge}>Active</Table.Cell>
+            case "inactive":
+                return <Table.Cell className={styles.inactiveBadge}>Active</Table.Cell>
+            case "paused":
+                return <Table.Cell className={styles.pausedBadge}>Active</Table.Cell>
+        }
+    }
 
     return (
         <div className={styles.techniciansListPage}>
@@ -30,7 +42,11 @@ const TechniciansList = ({ technicians }) => {
                         {technicians.length ?
                             technicians.map(tech => {
                                 return (<Table.Row key={tech.id}>
-                                    <Table.Cell>{tech.id}</Table.Cell>
+                                    <Table.Cell>
+                                        <Link href={`/technician/${tech.id}`}>
+                                            <a>{tech.id}</a>
+                                        </Link>
+                                    </Table.Cell>
                                     <Table.Cell>{tech.firstName}</Table.Cell>
                                     <Table.Cell>{tech.lastName}</Table.Cell>
                                     <Table.Cell>{tech.email}</Table.Cell>
@@ -38,7 +54,7 @@ const TechniciansList = ({ technicians }) => {
                                 </Table.Row>)
                             }) :
                             <Table.Row>
-                                <Table.Cell ></Table.Cell>
+                                <Table.Cell></Table.Cell>
                             </Table.Row>}
                     </Table.Body>
                 </Table>

@@ -8,7 +8,7 @@ router.post('/new', async (req, res) => {
 
     let insertId;
 
-    database.query("INSERT INTO tickets (title, description, created_by) VALUES (?,?,?);", [title, description, contact], (error, results, fields) => {
+    database.execute("INSERT INTO tickets (title, description, created_by) VALUES (?,?,?);", [title, description, contact], (error, results, fields) => {
         if (error) throw error;
         insertId = results.insertId;
         res.send({ "insertId": insertId })
@@ -18,7 +18,7 @@ router.post('/new', async (req, res) => {
 router.get('/:id', (req, res) => {
     let { id } = req.params;
 
-    database.query("SELECT * from tickets WHERE id = ?", [id], (error, results, fields) => {
+    database.execute("SELECT * from tickets WHERE id = ?", [id], (error, results, fields) => {
         if (error) throw error;
         res.send(results);
     });
