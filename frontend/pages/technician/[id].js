@@ -1,8 +1,16 @@
+import styles from '../../styles/technicians/TechnicianById.module.css';
+''
+
 const TechnicianById = ({ technician }) => {
 
     return (
-        <div>
-            <p>{technician.firstName} {technician.lastName}</p>
+        <div className={styles.container}>
+            <div className={styles.technicianDetails}>
+                <h2>{technician.firstName} {technician.lastName}</h2>
+                <p>{technician.email}</p>
+                <p>{technician.phone}</p>
+            </div>
+
         </div>
     )
 }

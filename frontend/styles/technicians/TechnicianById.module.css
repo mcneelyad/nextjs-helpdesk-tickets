@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88vh;
+}
+
+.technicianDetails {
+    /* border: 1px solid blue; */
+    height: 70vh;
+    width: 60vw;
+    text-align: center;
+}
