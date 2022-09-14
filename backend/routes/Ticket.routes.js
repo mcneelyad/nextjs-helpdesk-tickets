@@ -30,4 +30,16 @@ router.get('/:id/edit', (req, res) => {
     res.send(`Edit ticket with id: ${id}`)
 });
 
+router.post('/:id/status', (req, res) => {
+    let { id } = req.params;
+    let { status } = req.body;
+
+    if (status) {
+        database.execute('UPDATE tickets SET status = ? WHERE id = ?;', [status, id], (error, results, fields) => {
+            if (error) throw error;
+            res.send(results);
+        })
+    }
+})
+
 module.exports = router;
